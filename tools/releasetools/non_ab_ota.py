@@ -226,7 +226,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
 
-  is_plus = target_info.GetBuildProp("org.altho.version").endswith(
+  is_plus = target_info.GetBuildProp("org.flexo.version").endswith(
         "_plus")
   android_version = target_info.GetBuildProp("ro.build.version.release")
   build_id = target_info.GetBuildProp("ro.build.id")
