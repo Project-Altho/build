@@ -259,27 +259,20 @@ class EdifyGenerator(object):
     """Log a message to the screen (if the logs are visible)."""
     self.script.append('ui_print("%s");' % (message,))
 
-  def PrintFlexoBanner(self, is_plus, android_version, build_id, build_date,
+  def PrintPixelExperienceBanner(self, is_plus, android_version, build_id, build_date,
                                   security_patch, device):
-    self.Print("--------------------------------------------------------")
-    self.Print("   __________                   __                __    ");
-    self.Print("   \______   \______  ____     |__| ____   ____ _/  |_  ");
-    self.Print("    |     ___/_  __ \/ __ \    |  |/ __ \_/ ___\\   __\ ");
-    self.Print("    |    |    |  | \/  \_\ )   |  |  ___/_  \___ |  |   ");
-    self.Print("    |____|    |__|   \____//\__|  |\___  /\___  /|__|   ");
-    self.Print("                             \_____/     \/     \/      ");
-    self.Print("                                                        ");
-    self.Print("         _____________                                  ");
-    self.Print("         \_   _____/  |   ____   ____   ____            ");
-    self.Print("          |  ___) |  | _/ __ \_/ ___\ / __ \            ");
-    self.Print("          |  \__  |  |__  ___/_  \___(  \_\ )           ");
-    self.Print("         /___  /  |____/\___  /\___  /\____/            ");
-    self.Print("             \/             \/     \/                   ");
-    self.Print("--------------------------------------------------------")
-    self.Print(" Android Version: %s"%(android_version));
-    self.Print(" Build ID: %s"%(build_id));
-    self.Print(" Build Time: %s"%(build_date));
-    self.Print(" Security Patch: %s"%(security_patch));
+    self.Print("----------------------------------------------")
+    if is_plus:
+      self.Print("              Project Flexo")
+      self.Print("              Powered by Android")
+    else:
+      self.Print("              Project Flexo")
+      self.Print("              Powered by Android")
+    self.Print("----------------------------------------------")
+    self.Print(" Android version: %s"%(android_version))
+    self.Print(" Build id: %s"%(build_id))
+    self.Print(" Build date: %s"%(build_date))
+    self.Print(" Security patch: %s"%(security_patch))
     self.Print(" Device: %s"%(device))
     self.Print("----------------------------------------------")
 
